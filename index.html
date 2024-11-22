@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eu sou lindo?</title>
+  <style>
+    body {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      background: linear-gradient(135deg, #c2c8ff, #000a8f);
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+    h1 {
+      color: #fff;
+      font-size: 3rem;
+      text-shadow: 2px 2px 5px #0f0101;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+    #sim {
+      background-color: #6e89ff;
+      color: white;
+      box-shadow: 0 4px 10px rgba(128, 99, 255, 0.6);
+    }
+    #sim:hover {
+      background-color: #1100ff;
+      transform: scale(1.1);
+    }
+    #nao {
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      position: absolute;
+      box-shadow: 0 4px 10px rgb(0, 0, 0);
+    }
+    #nao:hover {
+      transform: rotate(10deg);
+    }
+  </style>
+</head>
+<body>
+  <h1>Eu sou lindo? 😎</h1>
+  <button id="sim">Sim</button>
+  <button id="nao">Não</button>
+
+  <script>
+    const naoButton = document.getElementById("nao");
+
+    // Faz o botão "Não" fugir ao passar o mouse
+    naoButton.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - naoButton.offsetWidth);
+      const y = Math.random() * (window.innerHeight - naoButton.offsetHeight);
+      naoButton.style.left = `${x}px`;
+      naoButton.style.top = `${y}px`;
+    });
+
+    // Clique no botão "Sim" redireciona para um vídeo no YouTube
+    document.getElementById("sim").addEventListener("click", () => {
+      window.location.href = "https://www.youtube.com/watch?v=1X48vOhFgYM"; // Coloque o link do seu vídeo aqui
+    });
+
+    
+  </script>
+</body>
+</html>
